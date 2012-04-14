@@ -1,5 +1,5 @@
 # coding: utf-8
-Admin::BaseController.class_eval do
+Spree::Admin::BaseController.class_eval do
   def flash_message_for(object, event_sym)
     resource_i18n_class_name = object.class.model_name.human.mb_chars
     resource_desc = resource_i18n_class_name

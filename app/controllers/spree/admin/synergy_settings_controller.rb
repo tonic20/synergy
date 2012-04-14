@@ -1,4 +1,4 @@
-class Admin::SynergySettingsController < Admin::BaseController
+class Spree::Admin::SynergySettingsController < Spree::Admin::BaseController
   before_filter :load_configuration, :only => [:edit, :update]
   
   def show

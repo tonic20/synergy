@@ -1,4 +1,4 @@
-UserSessionsController.class_eval do
+Spree::UserSessionsController.class_eval do
   private
   def associate_user
     return unless current_user

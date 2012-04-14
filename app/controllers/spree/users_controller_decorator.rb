@@ -1,4 +1,4 @@
-UsersController.class_eval do
+Spree::UsersController.class_eval do
   prepend_before_filter :load_object, :only => [:show, :edit, :update, :edit_status, :update_status]
   before_filter :check_juridical, :only => :update_status
   

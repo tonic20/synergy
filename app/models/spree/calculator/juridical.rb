@@ -1,4 +1,4 @@
-class Calculator::Juridical < Calculator
+class Spree::Calculator::Juridical < Spree::Calculator
   def self.description
     I18n.t("juridical_invoice")
   end

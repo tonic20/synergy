@@ -1,4 +1,4 @@
-class PaymentMethod::SberBankInvoice < PaymentMethod::Check
+class Spree::PaymentMethod::SberBankInvoice < Spree::PaymentMethod::Check
   preference :recipient, :string
   preference :inn, :string
   preference :kpp, :string

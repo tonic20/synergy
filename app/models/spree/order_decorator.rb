@@ -1,4 +1,4 @@
-Order.class_eval do
+Spree::Order.class_eval do
   # Updates the +payment_state+ attribute according to the following logic:
   #
   # paid          when +payment_total+ is equal to +total+

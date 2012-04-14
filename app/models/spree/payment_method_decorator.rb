@@ -1,5 +1,5 @@
 # coding: utf-8
-PaymentMethod.class_eval do
+Spree::PaymentMethod.class_eval do
   def self.internal
     pm = PaymentMethod.where(:environment => Rails.env, 
                              :display_on => "back_end", 

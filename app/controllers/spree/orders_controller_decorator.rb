@@ -1,4 +1,4 @@
-OrdersController.class_eval do
+Spree::OrdersController.class_eval do
   def sberbank_invoice
     @order = Order.find_by_number(params[:id])
     @preferences = @order.payment_method.preferences
@@ -6,7 +6,7 @@ OrdersController.class_eval do
   end
   
   def juridical_invoice
-    @order = Order.find_by_number(params[:id])
+    @order = Spree::Order.find_by_number(params[:id])
     @user = @order.user
     @synergy_configuration = Spree::Synergy::Config.get
     render :layout => false
