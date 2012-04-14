@@ -15,10 +15,10 @@ Gem::Specification.new do |s|
   s.require_path = 'lib'
   s.requirements << 'none'
 
-  s.add_dependency('synergy_russian', '0.2.8')
+  s.add_dependency 'synergy_russian', '0.2.8'
   #s.add_dependency('json', '>= 1.5')
   #s.add_dependency('nokogiri', '~> 1.5')
-  s.add_dependency('spree', '~> 1.0')
+  s.add_dependency 'spree', '~> 1.0'
   #s.add_dependency('spree_static_content', '~> 0.70.0')
   #s.add_dependency('spree_editor', '~> 1.0')
   #s.add_dependency('spree_robokassa', '~> 0.50.2')
