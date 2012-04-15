@@ -48,7 +48,7 @@ module Spree
 
       config.to_prepare &method(:activate).to_proc
 
-      initializer "spree.auth.environment", :before => :load_config_initializers do |app|
+      initializer "spree.synergy.environment", :before => :load_config_initializers do |app|
         Spree::Synergy::Config = Spree::SynergyConfiguration.new
       end
       
