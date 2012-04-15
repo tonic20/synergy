@@ -1,8 +1,4 @@
 # coding: utf-8
-require 'russian'
-require 'ru_propisju'
-require 'ext/number_helper'
-
 module Spree
   module Synergy
     class Engine < Rails::Engine
