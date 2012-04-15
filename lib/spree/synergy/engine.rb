@@ -1,14 +1,6 @@
 # coding: utf-8
-
-# require 'spree_core'
-# require 'spree_auth'
-# require 'spree_api'
-# require 'spree_dash'
-# require 'spree_promo'
-# require 'spree_i18n'
-# require 'russian'
-# require 'ru_propisju'
-
+require 'russian'
+require 'ru_propisju'
 require 'ext/number_helper'
 
 module Spree
@@ -19,8 +11,11 @@ module Spree
       config.autoload_paths += %W(#{config.root}/lib)
 
       def self.activate
-        Dir.glob(File.join(File.dirname(__FILE__), "../app/**/*_decorator*.rb")) do |c|
-          Rails.env.production? ? require(c) : load(c)
+        Dir.glob(File.join(File.dirname(__FILE__), "../../../app/overrides/*.rb")) do |c|
+          Rails.configuration.cache_classes ? require(c) : load(c)
+        end
+        Dir.glob(File.join(File.dirname(__FILE__), "../../../app/**/*_decorator*.rb")) do |c|
+          Rails.configuration.cache_classes ? require(c) : load(c)
         end
 
         Time::DATE_FORMATS[:default] = "%d.%m.%Y - %H:%M"
@@ -56,6 +51,10 @@ module Spree
       end
 
       config.to_prepare &method(:activate).to_proc
+
+      initializer "spree.auth.environment", :before => :load_config_initializers do |app|
+        Spree::Synergy::Config = Spree::SynergyConfiguration.new
+      end
       
       initializer "spree.register.calculators" do |app|
         app.config.spree.calculators.shipping_methods = [
