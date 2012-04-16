@@ -1,50 +1,50 @@
 <table>
   <tr>
-    <td><%= SynergyConfiguration.human_attribute_name(:preferred_juridical_enabled) %>:</td>
-    <td><%= @synergy_configuration['juridical_enabled'] ? t("yes") : t("no") %></td>
+    <td><%= Spree::Synergy::Config.preference_description(:juridical_enabled) %>:</td>
+    <td><%= Spree::Synergy::Config['juridical_enabled'] ? t("yes") : t("no") %></td>
   </tr>
   <tr>
-    <td><%= SynergyConfiguration.human_attribute_name(:preferred_recipient) %>:</td>
-    <td><%= @synergy_configuration['recipient'] %></td>
+    <td><%= Spree::Synergy::Config.preference_description(:recipient) %>:</td>
+    <td><%= Spree::Synergy::Config['recipient'] %></td>
   </tr>
   <tr>
-    <td><%= SynergyConfiguration.human_attribute_name(:preferred_address) %>:</td>
-    <td><%= @synergy_configuration['address'] %></td>
+    <td><%= Spree::Synergy::Config.preference_description(:address) %>:</td>
+    <td><%= Spree::Synergy::Config['address'] %></td>
   </tr>
   <tr>
-    <td><%= SynergyConfiguration.human_attribute_name(:preferred_inn) %>:</td>
-    <td><%= @synergy_configuration['inn'] %></td>
+    <td><%= Spree::Synergy::Config.preference_description(:inn) %>:</td>
+    <td><%= Spree::Synergy::Config['inn'] %></td>
   </tr>
   <tr>
-    <td><%= SynergyConfiguration.human_attribute_name(:preferred_kpp) %>:</td>
-    <td><%= @synergy_configuration['kpp'] %></td>
+    <td><%= Spree::Synergy::Config.preference_description(:kpp) %>:</td>
+    <td><%= Spree::Synergy::Config['kpp'] %></td>
   </tr>
   <tr>
-    <td><%= SynergyConfiguration.human_attribute_name(:preferred_bank) %>:</td>
-    <td><%= @synergy_configuration['bank'] %></td>
+    <td><%= Spree::Synergy::Config.preference_description(:bank) %>:</td>
+    <td><%= Spree::Synergy::Config['bank'] %></td>
   </tr>
   <tr>
-    <td><%= SynergyConfiguration.human_attribute_name(:preferred_settlement_acc) %>:</td>
-    <td><%= @synergy_configuration['settlement_acc'] %></td>
+    <td><%= Spree::Synergy::Config.preference_description(:settlement_acc) %>:</td>
+    <td><%= Spree::Synergy::Config['settlement_acc'] %></td>
   </tr>
   <tr>
-    <td><%= SynergyConfiguration.human_attribute_name(:preferred_corr) %>:</td>
-    <td><%= @synergy_configuration['corr'] %></td>
+    <td><%= Spree::Synergy::Config.preference_description(:corr) %>:</td>
+    <td><%= Spree::Synergy::Config['corr'] %></td>
   </tr>
   <tr>
-    <td><%= SynergyConfiguration.human_attribute_name(:preferred_bik) %>:</td>
-    <td><%= @synergy_configuration['bik'] %></td>
+    <td><%= Spree::Synergy::Config.preference_description(:bik) %>:</td>
+    <td><%= Spree::Synergy::Config['bik'] %></td>
   </tr>
   <tr>
-    <td><%= SynergyConfiguration.human_attribute_name(:preferred_nds) %>:</td>
-    <td><%= @synergy_configuration['nds'] ? t(:w_nds) : t(:wo_nds) %></td>
+    <td><%= Spree::Synergy::Config.preference_description(:nds) %>:</td>
+    <td><%= Spree::Synergy::Config['nds'] ? t(:w_nds) : t(:wo_nds) %></td>
   </tr>
   <tr>
-    <td><%= SynergyConfiguration.human_attribute_name(:preferred_director) %>:</td>
-    <td><%= @synergy_configuration['director'] %></td>
+    <td><%= Spree::Synergy::Config.preference_description(:director) %>:</td>
+    <td><%= Spree::Synergy::Config['director'] %></td>
   </tr>
   <tr>
-    <td><%= SynergyConfiguration.human_attribute_name(:preferred_accountant) %>:</td>
-    <td><%= @synergy_configuration['accountant'] %></td>
+    <td><%= Spree::Synergy::Config.preference_description(:accountant) %>:</td>
+    <td><%= Spree::Synergy::Config['accountant'] %></td>
   </tr>
 </table>

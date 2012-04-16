@@ -1,20 +1,15 @@
 class Spree::Admin::SynergySettingsController < Spree::Admin::BaseController
-  before_filter :load_configuration
-  
   def update
-    contacts_preferences = params[:preferences][:contacts]    
-    Spree::Config.set(contacts_preferences)
-
-    if @synergy_configuration.update_attributes(params[:synergy_configuration])
-#      Spree::Synergy::Config.set
-      redirect_to admin_synergy_settings_url
-    else
-      render 'edit'
+    params[:contacts].each do |name, value|
+      next unless Spree::Config.has_preference? name
+      Spree::Config[name] = value
     end
-  end
-  
-private
-  def load_configuration
-    @synergy_configuration = Spree::Synergy::Config
+
+    params[:preferences].each do |name, value|
+      next unless Spree::Synergy::Config.has_preference? name
+      Spree::Synergy::Config[name] = value
+    end
+
+    redirect_to admin_synergy_settings_path
   end
 end
