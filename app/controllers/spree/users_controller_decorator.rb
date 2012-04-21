@@ -11,7 +11,7 @@ Spree::UsersController.class_eval do
       flash.notice = I18n.t(:account_updated)
       redirect_to account_url
     else
-      render 'edit_status'
+      render 'spree/users/edit_status'
     end
   end
 end

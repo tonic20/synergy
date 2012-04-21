@@ -35,5 +35,5 @@ Deface::Override.new(
   :virtual_path => "spree/users/show",
   :name => "synergy_account_summary",
   :insert_bottom => "[data-hook='account_summary'], #account_summary[data-hook]",
-  :partial => "users/status",
+  :partial => "spree/users/status",
   :disabled => false)
