@@ -28,7 +28,7 @@ Deface::Override.new(
   :virtual_path => "spree/admin/shared/_order_tabs",
   :name => "synergy_admin_order_tabs",
   :insert_bottom => "[data-hook='admin_order_tabs'], #admin_order_tabs[data-hook]",
-  :partial => "admin/orders/juridical_tabs",
+  :partial => "spree/admin/orders/juridical_tabs",
   :disabled => false)
 
 Deface::Override.new(
