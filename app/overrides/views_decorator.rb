@@ -34,6 +34,13 @@ Deface::Override.new(
 Deface::Override.new(
   :virtual_path => "spree/users/show",
   :name => "synergy_account_summary",
-  :insert_bottom => "[data-hook='account_summary'], #account_summary[data-hook]",
+  :insert_bottom => "[data-hook='account_summary'] #user-info",
   :partial => "spree/users/status",
-  :disabled => false)
+  :disabled => false) if Spree::Synergy::Config[:juridical_enabled]
+
+Deface::Override.new(
+  :virtual_path => "spree/shared/_user_form",
+  :name => "synergy_account_edit",
+  :insert_bottom => "#password-credentials",
+  :partial => "spree/users/status_form",
+  :disabled => false) if Spree::Synergy::Config[:juridical_enabled]
