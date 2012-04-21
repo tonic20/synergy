@@ -53,10 +53,7 @@
 
 <p>
   <%= f.label :nds %>:<br />
-  <%= f.radio_button :nds, false %>
-  <%= t(:wo_nds) %>&nbsp;
-  <%= f.radio_button :nds, true %>
-  <%= t(:w_nds) %>
+  <%= f.check_box :nds %>
 </p>
 
 <%= f.field_container :director do %>
